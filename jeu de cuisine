@@ -11,11 +11,67 @@ taille_fenetre = (largeur, hauteur)
 # Créer la fenêtre
 fenetre = pygame.display.set_mode(taille_fenetre)
 pygame.display.set_caption('Sandway')
-import pygame
 
-# Initialisation de Pygame
-pygame.init()
+class Personnage:
+    def __init__(self, nom, position=(0, 0), chemin_image="", argent_initial=0):
+        self._nom = nom
+        self._position = position
+        self._chemin_image = chemin_image
+        self._argent_initial = argent_initial
+        self._argent_courant = argent_initial
 
+    @property
+    def nom(self):
+        return self._nom
+
+    @nom.setter
+    def nom(self, value):
+        self._nom = value
+
+    @property
+    def position(self):
+        return self._position
+
+    @position.setter
+    def position(self, value):
+        self._position = value
+
+    @property
+    def chemin_image(self):
+        return self._chemin_image
+
+    @chemin_image.setter
+    def chemin_image(self, value):
+        self._chemin_image = value
+
+    @property
+    def argent_initial(self):
+        return self._argent_initial
+
+    @argent_initial.setter
+    def argent_initial(self, value):
+        self._argent_initial = value
+
+    @property
+    def argent_courant(self):
+        return self._argent_courant
+
+    @argent_courant.setter
+    def argent_courant(self, value):
+        self._argent_courant = value
+
+    def gagner_argent(self, montant):
+        self._argent_courant += montant
+
+    def __str__(self):
+        return f"Nom: {self._nom}, Position: {self._position}, Chemin Image: {self._chemin_image}, Argent Initial: {self._argent_initial}, Argent Courant: {self._argent_courant}"
+
+# Exemple d'utilisation de la classe Personnage
+if __name__ == "__main__":
+    personnage1 = Personnage("Alice", (10, 20), "images/alice.png", 100)
+    print(personnage1.nom)  # Utilisation du getter pour le nom
+    personnage1.nom = "Bob"  # Utilisation du setter pour le nom
+    print(personnage1.nom)
 
 # Boucle principale
 en_cours = True
