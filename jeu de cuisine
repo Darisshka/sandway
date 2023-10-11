@@ -1,1 +1,54 @@
-ty loch
+import pygame
+
+# Initialisation de Pygame
+pygame.init()
+
+# Définir la taille de la fenêtre
+largeur = 1000
+hauteur = 500
+taille_fenetre = (largeur, hauteur)
+
+# Créer la fenêtre
+fenetre = pygame.display.set_mode(taille_fenetre)
+pygame.display.set_caption('Sandway')
+import pygame
+
+# Initialisation de Pygame
+pygame.init()
+
+# Définir la taille de la fenêtre
+largeur = 1000
+hauteur = 500
+taille_fenetre = (largeur, hauteur)
+
+# Créer la fenêtre
+fenetre = pygame.display.set_mode(taille_fenetre)
+pygame.display.set_caption('Sandway')
+# Boucle principale
+en_cours = True
+while en_cours:
+    for evenement in pygame.event.get():
+        if evenement.type == pygame.QUIT:
+            en_cours = False
+
+
+    
+    # Mise à jour de l'affichage
+    pygame.display.flip()
+
+# Quitter Pygame
+pygame.quit()
+# Boucle principale
+en_cours = True
+while en_cours:
+    for evenement in pygame.event.get():
+        if evenement.type == pygame.QUIT:
+            en_cours = False
+
+
+    
+    # Mise à jour de l'affichage
+    pygame.display.flip()
+
+# Quitter Pygame
+pygame.quit()
